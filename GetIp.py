@@ -30,7 +30,7 @@ class action(object):
         self.q = quote(self.query)
         self.qbase64 = quote(str(base64.b64encode(self.query.encode()), encoding='utf-8'))
 
-    def IpAction(self):
+    def IpAction(self, FUNCTION):
         page, i, sheet, header = FofaSpider.FofaSpider.spider(self)
         try:
             pagenum = int(page) + 1
@@ -87,7 +87,7 @@ class action(object):
                         # time.sleep(1)
 
                     pool = Pool(10)
-                    threads = [pool.spawn(GetPlugs.GetPlugs, ip) for ip in url_list]
+                    threads = [pool.spawn(GetPlugs.GetPlugs, ip, FUNCTION) for ip in url_list]
                     gevent.joinall(threads)
 
                 # 关闭写文件功能

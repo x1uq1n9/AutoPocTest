@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # coding: utf-8
 # author:x1uq1n9
-import main
+import AutoPocTest
 
 UserAgent = ["Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0",
                           "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 9.50",
@@ -21,4 +21,4 @@ UserAgent = ["Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefo
 f = open('user/COOKIES', 'r')
 cookie = f.read()
 f.close()
-query = main.query
+query = AutoPocTest.query

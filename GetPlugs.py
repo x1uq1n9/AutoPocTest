@@ -2,17 +2,29 @@
 # coding: utf-8
 # author:x1uq1n9
 
-# 导入poc或exp脚本
-import plugins.tongda_oa as tongda_oa
-import plugins.thinkphp_checkcode_time_sqli as thinkphp_checkcode_time_sqli
+import os
+import pkgutil
+import importlib
+
+pkgpath = os.path.dirname(__file__) + "/plugins"
+pkgname = os.path.basename(pkgpath)
+print("\033[36mSuccessfully load plugins: \033[0m")
+
+# 动态加载poc或exp脚本
+plug_list = []
+for _, file, _ in pkgutil.iter_modules([pkgpath]):
+    print(file)
+    # __import__(pkgname + '.' + file)
+    plug_list.append(file)
+    exec("import " + pkgname + "." + file + " as " + file)
+    # module_object = importlib.import_module(pkgname + '.' + file) # 将模块加载为对象
 
 
-def GetPlugs(url):
-    # print(tongda_oa)
+def GetPlugs(url, FUNCTION):
     try:
-        tongda_oa.test(url)
-        # thinkphp_checkcode_time_sqli.thinkphp_checkcode_time_sqli_verify(url)
+        exec(FUNCTION)
+        # seeyon_getshell.test(url)
     except Exception as e:
         print("\033[31m[!]" + url + "异常！\033[0m")
-        # print(e)
+        print(e)
         pass
