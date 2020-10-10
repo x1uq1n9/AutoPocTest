@@ -10,8 +10,7 @@ import requests
 
 from datetime import datetime
 from urllib.parse import quote
-from lxml import etree
-from settings import UserAgent, cookie
+from core.settings import UserAgent, cookie
 
 
 class FofaSpider(object):
