@@ -6,23 +6,15 @@ import lib.GetIp as GetIp
 import lib.FofaApi as FofaApi
 import lib.ShodanApi as ShodanApi
 import core.FofaSpider as FofaSpider
+import core.ConfRead as ConfRead
 
-# 查询语句
-# query = '''致远A8+协同管理软件 V6.1'''
-query = '''header="Ubuntu"'''
-
-# FoFaApi开关以及配置
-USE_FofaApi = False
-FOFA_EMAIL = ""
-FOFA_KEY = ""
-
-# ShodanApi开关以及配置
-USE_ShodanApi = True
-Shodan_Api = ""
-
-# 调用exp
-FUNCTION = "seeyon_getshell.test(url)"
-# FUNCTION = "thinkphp_view_recent_xff_sqli.thinkphp_view_recent_xff_sqli_verify(url)"
+query = ConfRead.query
+USE_FofaApi = ConfRead.USE_FofaApi
+FOFA_EMAIL = ConfRead.FOFA_EMAIL
+FOFA_KEY = ConfRead.FOFA_KEY
+USE_ShodanApi = ConfRead.USE_ShodanApi
+Shodan_Api = ConfRead.Shodan_Api
+FUNCTION = ConfRead.FUNCTION
 
 if __name__ == '__main__':
     FofaSpider.banner()

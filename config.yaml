@@ -1,0 +1,15 @@
+Query:
+  query: header="Ubuntu"
+
+Fofa:
+  USE_FofaApi: False
+  FOFA_EMAIL:
+  FOFA_KEY:
+
+Shodan:
+  USE_ShodanApi: True
+  Shodan_Api: 
+
+Function:
+  FUNCTION: seeyon_getshell.test(url)
+  # FUNCTION: thinkphp_view_recent_xff_sqli.thinkphp_view_recent_xff_sqli_verify(url)

@@ -29,5 +29,3 @@ def ShodanApi_Action(query, Shodan_Api, FUNCTION):
     pool = Pool(20)
     threads = [pool.spawn(GetPlugs.GetPlugs, ip, FUNCTION) for ip in url_list]
     gevent.joinall(threads)
-
-# ShodanApi_Action('http.title:"hacked by"', "EEFr2PmVoBV33oRnLuoXs4fmqeWafcJV", 123)
