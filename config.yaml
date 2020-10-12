@@ -8,7 +8,7 @@ Fofa:
 
 Shodan:
   USE_ShodanApi: True
-  Shodan_Api: 
+  Shodan_Api:
 
 Function:
   FUNCTION: seeyon_getshell.test(url)

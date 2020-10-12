@@ -1,5 +1,5 @@
 # AutoPocTest
-AutoPocTest是一个由x1uq1n9开源的漏洞检测框架，使用Python3开发，自动调用网络空间安全搜索引擎，目前只支持fofa，其他引擎有待开发。
+AutoPocTest是一个由x1uq1n9开源的漏洞检测框架，使用Python3开发，自动调用Shodan、Fofa等网络空间安全搜索引擎。
 
 基本兼容网上绝大部分poc与exp；使用协程，轻量化，可满足在大多数场景下使用
 
